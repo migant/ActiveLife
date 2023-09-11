@@ -5,7 +5,7 @@
 package com.seniorsolutions.activelife.backend.endpoints.user;
 
 import com.google.gson.Gson;
-import com.seniorsolutions.activelife.entities.user.UserLoginSuccess;
+import com.seniorsolutions.activelife.protocol.user.UserLoginSuccess;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -13,6 +13,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
@@ -32,21 +35,50 @@ public class Login extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         response.setContentType("text/html;charset=UTF-8");
         
- 
         UserLoginSuccess userSuccess = new UserLoginSuccess();
-      
+
+        
+        try 
+        {
+            String dbURL = "jdbc:postgresql://localhost/ActiveLife";
+            String dbUserName = "q";
+            String dbUserPassword = "";
+            
+            Class.forName("org.postgresql.Driver");
+ 
+            Connection connection = DriverManager.getConnection(
+                    dbURL,
+                    dbUserName,
+                    dbUserPassword
+            );
+            
+            userSuccess.setDebugMessage(connection.toString());
+            
+        }
+        catch (SQLException e)
+        {
+            userSuccess.setDebugMessage( e.toString());
+        }  
+        catch (Exception e)
+        {
+            userSuccess.setDebugMessage( e.toString());
+        }  
+
+        
         String loginJsonString = new Gson().toJson(userSuccess);
+        
         
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
+        
         out.print(loginJsonString);
         out.flush();      
         
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

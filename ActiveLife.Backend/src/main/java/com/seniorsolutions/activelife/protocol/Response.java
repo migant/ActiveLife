@@ -14,6 +14,8 @@ public class Response {
     private String objectType;
     
     private String objectSubType;
+    
+    private String debugMessage;
 
     
     public String getObjectType() {
@@ -31,6 +33,14 @@ public class Response {
     public void setObjectSubType(String objectSubType) {
         this.objectSubType = objectSubType;
     }
-    
+
+    public String getDebugMessage() {
+        return debugMessage;
+    }
+
+    public void setDebugMessage(String debugMessage) {
+        this.debugMessage = debugMessage;
+    }
+  
     
 }
