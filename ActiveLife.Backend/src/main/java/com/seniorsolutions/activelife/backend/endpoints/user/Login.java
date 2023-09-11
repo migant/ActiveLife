@@ -38,17 +38,19 @@ public class Login extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         
+        response.setStatus(200);
+        
         UserLoginSuccess userSuccess = new UserLoginSuccess();
 
         
         try 
         {
-            String dbURL = "jdbc:postgresql://localhost/ActiveLife";
-            String dbUserName = "q";
-            String dbUserPassword = "";
-            
             Class.forName("org.postgresql.Driver");
- 
+
+            String dbURL = "jdbc:postgresql://localhost/ActiveLife";
+            String dbUserName = "AL";
+            String dbUserPassword = "FilipeMANMateus";
+             
             Connection connection = DriverManager.getConnection(
                     dbURL,
                     dbUserName,
