@@ -5,7 +5,7 @@
 package com.seniorsolutions.activelife.backend.endpoints.user;
 
 import com.google.gson.Gson;
-import com.seniorsolutions.activelife.protocol.user.UserLoginSuccess;
+import com.seniorsolutions.activelife.backend.protocol.user.UserLoginSuccess;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
