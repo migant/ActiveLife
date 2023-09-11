@@ -2,12 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package entities;
+package com.seniorsolutions.activelife.entities.user;
+
+import com.google.gson.GsonBuilder;
 
 /**
  *
  * @author man
  */
-public class UserLoginError {
+public class UserLoginSuccess {
+  
     
+
 }
