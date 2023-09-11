@@ -2,14 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.seniorsolutions.activelife.entities.user;
-
-import com.seniorsolutions.activelife.protocol.Response;
+package com.seniorsolutions.activelife.protocol;
 
 /**
  *
- * @author man
+ * @author q
  */
-public class UserLoginError extends Response {
+public class Request {
     
 }

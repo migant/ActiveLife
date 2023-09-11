@@ -4,11 +4,13 @@
  */
 package com.seniorsolutions.activelife.entities.user;
 
+import com.seniorsolutions.activelife.protocol.Request;
+
 /**
  *
  * @author man
  */
-public class UserLoginRequest {
+public class UserLoginRequest extends Request {
     
     private String userName;
     
