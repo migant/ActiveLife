@@ -11,7 +11,6 @@ import com.google.gson.GsonBuilder;
  * @author man
  */
 public class UserLoginSuccess {
-  
-    
 
+    
 }
