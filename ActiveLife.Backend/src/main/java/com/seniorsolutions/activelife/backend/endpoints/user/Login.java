@@ -46,9 +46,9 @@ public class Login extends HttpServlet {
         {
             Class.forName("org.postgresql.Driver");
 
-            String dbURL = "jdbc:postgresql://localhost/ActiveLife";
-            String dbUserName = "AL";
-            String dbUserPassword = "FilipeMANMateus";
+            String dbURL = "jdbc:postgresql://216.238.106.15/ActiveLife";
+            String dbUserName = "al";
+            String dbUserPassword = "Filipe_MAN_Mateus";
              
             Connection connection = DriverManager.getConnection(
                     dbURL,
