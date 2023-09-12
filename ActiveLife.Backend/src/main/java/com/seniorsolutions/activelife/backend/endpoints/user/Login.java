@@ -42,7 +42,6 @@ public class Login extends HttpServlet {
         
         UserLoginSuccess userSuccess = new UserLoginSuccess();
 
-        
         try 
         {
             Class.forName("org.postgresql.Driver");
@@ -56,8 +55,10 @@ public class Login extends HttpServlet {
                     dbUserName,
                     dbUserPassword
             );
+           
+            userSuccess.setSessionID(connection.toString());
             
-            userSuccess.setDebugMessage(connection.toString());
+            userSuccess.setDebugMessage("User Logged in");
             
         }
         catch (SQLException e)
@@ -75,11 +76,9 @@ public class Login extends HttpServlet {
         
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-        
+        response.setCharacterEncoding("UTF-8");        
         out.print(loginJsonString);
-        out.flush();      
-        
+        out.flush();
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
