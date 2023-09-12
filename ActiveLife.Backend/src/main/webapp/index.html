@@ -2,19 +2,22 @@
 <html>
 <head>
     <title>Active Life</title>
+    <script src="login.js"></script>
 </head>
 <body style="text-align:center;">
     <a href="index.html">
         <img src="logo.png" alt="Active Life logo">
     </a>
     <br>
-    <label for="username">User name:</label>
-    <input type="text" id="username" name="username">
-    <br>
-    <label for="password">Password:</label>
-    <input type="text" id="password" name="password">
-    <br>
-    <input type="submit" value="Log in">
-    <input type="button" onclick="location.href='signup.html'" value="Sign Up">
+    <form id="login" method="post" action="index.html">
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email">
+        <br>
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password">
+        <br>
+        <input type="submit" value="Log in">
+        <input type="button" onclick="signup.html" value="Sign Up">
+    </form>
 </body>
 </html>
