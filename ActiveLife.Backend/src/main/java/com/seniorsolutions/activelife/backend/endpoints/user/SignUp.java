@@ -30,6 +30,7 @@ public class SignUp extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -40,6 +41,16 @@ public class SignUp extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet SignUp at " + request.getContextPath() + "</h1>");
+            
+            out.println("<h2> " + request.getMethod() + "</h2>");
+            
+            out.println("<h2> " + request.getQueryString() + "</h2>");
+            
+            out.println("<h2> " + request.getRequestURI()+ "</h2>");
+            
+            out.println("<h2> " + request.getMethod() + "</h2>");
+            
+
             out.println("</body>");
             out.println("</html>");
         }
